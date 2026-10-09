@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a11">
+  <meta name="description" content="Una noche, un disfraz y un secreto. ¿Te atreves a entrar a nuestra fiesta de Halloween?">
+  <title>Halloween — Entra si te atreves</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="loader-pumpkin">🎃</div>
+    <p>Despertando a las sombras...</p>
+    <span class="loader-line"></span>
+  </div>
+
+  <!-- BIENVENIDA -->
+  <section class="welcome" id="welcomeScreen">
+    <div class="welcome-shade"></div>
+
+    <div class="welcome-content">
+      <p class="eyebrow">UNA INVITACIÓN PARA LOS VALIENTES</p>
+      <h1>Esta noche<br><span>algo te espera</span></h1>
+      <p class="welcome-copy">Cruza el umbral… si te atreves.</p>
+
+      <button class="btn btn-red" id="enterInvitation" type="button">
+        Entrar si te atreves <span>→</span>
+      </button>
+
+      <small>Se recomienda sonido. Usa audífonos si te atreves.</small>
+    </div>
+  </section>
+
+  <!-- AUDIO OPCIONAL -->
+  <audio id="backgroundMusic" loop preload="none">
+    <source src="./audio/ambiente.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="sound-toggle" id="musicToggle" type="button"
+    aria-label="Activar o desactivar música" title="Activar música">♪</button>
+
+  <!-- NAVEGACIÓN -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark">☠</span>
+      <span>HALLOWEEN<small>UNA NOCHE DE DISFRACES</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button"
+      aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="mainNav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#trailer">Tráiler</a>
+      <a href="#evento">El evento</a>
+      <a href="#mision">Videojuego</a>
+      <a href="#confirmar">Confirmar</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg"></div>
+      <div class="hero-shade"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">31 DE OCTUBRE · UNA NOCHE PARA RECORDAR</p>
+        <h1>Fiesta de <span>Halloween</span></h1>
+        <p class="hero-subtitle">De disfraces. De misterio. De pesadillas.</p>
+
+        <div class="hero-rule"><span></span>✦<span></span></div>
+
+        <p class="hero-text">
+          Las puertas se abrirán cuando caiga la noche.<br>
+          Ven disfrazado… o no respondemos por ti.
+        </p>
+
+        <a class="btn btn-red" href="#trailer">Ver el tráiler <span>▶</span></a>
+      </div>
+
+      <a class="scroll-cue" href="#trailer">
+        DESCIENDE SI TE ATREVES <span>⌄</span>
+      </a>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="intro section-pad">
+      <div class="section-label reveal">ARCHIVO 001 · ADVERTENCIA</div>
+      <h2 class="section-title reveal">No todas las historias<br>terminan al amanecer.</h2>
+
+      <p class="section-copy reveal">
+        Una mansión. Una noche. Una figura que no debería estar ahí.
+        Prepárate para una fiesta donde el misterio es parte del disfraz
+        y cada sombra guarda un secreto.
+      </p>
+
+      <div class="warning-stamp reveal">ENTRA<br>BAJO TU<br>PROPIO RIESGO</div>
+    </section>
+
+    <!-- TRÁILER -->
+    <section class="trailer-section section-pad" id="trailer">
+      <div class="section-label reveal">PRÓLOGO · TRÁILER</div>
+      <h2 class="section-title reveal">Mira lo que te espera</h2>
+      <p class="section-copy reveal">Sube el volumen. Apaga las luces. No mires atrás.</p>
+
+      <div class="video-frame reveal">
+        <div class="video-topline">
+          <span>ARCHIVO CONFIDENCIAL</span>
+          <span>NO MIRES ATRÁS</span>
+        </div>
+
+        <video id="trailerVideo" controls playsinline preload="metadata"
+          poster="./images/video-cover.jpg" controlsList="nodownload">
+          <source src="./video/halloween-trailer.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+
+        <div class="video-caption">
+          Una producción de la noche · Reproducción recomendada con sonido
+        </div>
+      </div>
+    </section>
+
+    <!-- DATOS DEL EVENTO -->
+    <section class="event-section section-pad" id="evento">
+      <div class="section-label reveal">EL EXPEDIENTE · DATOS DEL EVENTO</div>
+      <h2 class="section-title reveal">Has sido convocado</h2>
+
+      <div class="event-card reveal">
+        <div class="event-poster">
+          <span class="poster-small">UNA NOCHE</span>
+          <strong>DE<br><em>TERROR</em></strong>
+          <span class="poster-bottom">FIESTA DE DISFRACES</span>
+        </div>
+
+        <div class="event-details">
+          <div class="detail">
+            <span class="detail-icon">☾</span>
+            <div>
+              <small>FECHA</small>
+              <strong>[Día, fecha y mes]</strong>
+            </div>
+          </div>
+
+          <div class="detail">
+            <span class="detail-icon">◷</span>
+            <div>
+              <small>HORA</small>
+              <strong>[Hora de inicio]</strong>
+            </div>
+          </div>
+
+          <div class="detail">
+            <span class="detail-icon">⌖</span>
+            <div>
+              <small>UBICACIÓN</small>
+              <strong>[Nombre del lugar]</strong>
+              <p>[Dirección completa]</p>
+            </div>
+          </div>
+
+          <div class="detail">
+            <span class="detail-icon">♜</span>
+            <div>
+              <small>CÓDIGO DE VESTIMENTA</small>
+              <strong>Disfraz o nada</strong>
+              <p>Premio para el disfraz más aterrador.</p>
+            </div>
+          </div>
+
+          <div class="event-actions">
+            <a class="btn btn-outline" id="mapsLink"
+              href="https://www.google.com/maps" target="_blank"
+              rel="noopener noreferrer">Ver ubicación ↗</a>
+
+            <a class="btn btn-outline" id="wazeLink"
+              href="https://www.waze.com/" target="_blank"
+              rel="noopener noreferrer">Abrir Waze ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="demo-note">
+        Personaliza los datos del evento y la ubicación antes de publicar.
+      </p>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+    <section class="countdown-section section-pad">
+      <div class="countdown-bg"></div>
+      <div class="countdown-shade"></div>
+
+      <div class="countdown-content reveal">
+        <div class="section-label">EL RELOJ NO SE DETIENE</div>
+        <h2 class="section-title">La noche se acerca</h2>
+
+        <div class="countdown" id="countdown" aria-label="Cuenta regresiva">
+          <div><strong id="days">00</strong><span>DÍAS</span></div>
+          <div><strong id="hours">00</strong><span>HORAS</span></div>
+          <div><strong id="minutes">00</strong><span>MINUTOS</span></div>
+          <div><strong id="seconds">00</strong><span>SEGUNDOS</span></div>
+        </div>
+
+        <p id="countdownMessage" class="countdown-message">
+          Prepárate para una noche fuera de lo común.
+        </p>
+      </div>
+    </section>
+
+    <!-- VIDEOJUEGO RETRO -->
+    <section class="mission-section section-pad" id="mision">
+      <div class="section-label reveal">ARCADE DE TERROR · 8-BIT</div>
+      <h2 class="section-title reveal">La noche del cazador</h2>
+
+      <p class="section-copy reveal">
+        El bosque está oscuro. Hay alguien ahí fuera.
+        Encuentra las cinco calabazas y llega vivo al final.
+      </p>
+
+      <div class="retro-game reveal">
+        <div class="arcade-header">
+          <div class="arcade-brand">NIGHTMARE <span>1989</span></div>
+          <div class="arcade-status" id="retroStatus">● PLAYER 1</div>
+        </div>
+
+        <div class="retro-hud">
+          <div>
+            <small>VIDAS</small>
+            <strong id="retroLives">♥ ♥ ♥</strong>
+          </div>
+          <div>
+            <small>CALABAZAS</small>
+            <strong id="retroPumpkins">00 / 05</strong>
+          </div>
+          <div>
+            <small>TIEMPO</small>
+            <strong id="retroTimer">60</strong>
+          </div>
+        </div>
+
+        <div class="retro-screen" id="retroScreen">
+          <canvas
+            id="retroCanvas"
+            width="320"
+            height="180"
+            aria-label="Videojuego retro de supervivencia en un bosque"
+            role="img"
+          ></canvas>
+
+          <div class="retro-overlay" id="retroOverlay">
+            <div class="retro-overlay-content">
+              <p class="pixel-kicker">A HALLOWEEN NIGHTMARE</p>
+              <h3 id="retroTitle">THE NIGHT HUNTER</h3>
+              <p id="retroDescription">
+                CINCO CALABAZAS.<br>
+                TRES VIDAS.<br>
+                NO DEJES QUE TE ATRAPE.
+              </p>
+              <button class="pixel-button" id="retroStart" type="button">
+                START GAME
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="retro-controls">
+          <div class="dpad" aria-label="Controles de movimiento">
+            <button type="button" data-direction="up" aria-label="Arriba">▲</button>
+            <button type="button" data-direction="left" aria-label="Izquierda">◀</button>
+            <button type="button" data-direction="down" aria-label="Abajo">▼</button>
+            <button type="button" data-direction="right" aria-label="Derecha">▶</button>
+          </div>
+
+          <div class="retro-help">
+            <p>CONTROLES</p>
+            <span>FLECHAS / BOTONES</span>
+            <span>MUÉVETE Y RECOGE LAS CALABAZAS</span>
+            <span>¡EVITA AL CAZADOR!</span>
+          </div>
+        </div>
+
+        <div class="arcade-footer">
+          <span>INSERT COIN</span>
+          <span>★ SURVIVE THE NIGHT ★</span>
+          <span>8-BIT HORROR</span>
+        </div>
+      </div>
+
+      <p class="retro-disclaimer">
+        Aventura original inspirada en los videojuegos clásicos de terror.
+      </p>
+    </section>
+
+    <!-- REGLAS -->
+    <section class="rules-section section-pad">
+      <div class="section-label reveal">LAS REGLAS DE LA NOCHE</div>
+      <h2 class="section-title reveal">Recuerda…</h2>
+
+      <div class="rules-grid">
+        <article class="rule-card reveal">
+          <span>01</span>
+          <h3>Ven disfrazado</h3>
+          <p>El disfraz es obligatorio. La imaginación, ilimitada.</p>
+        </article>
+
+        <article class="rule-card reveal">
+          <span>02</span>
+          <h3>Trae tu valentía</h3>
+          <p>Puede que la necesites antes de que termine la noche.</p>
+        </article>
+
+        <article class="rule-card reveal">
+          <span>03</span>
+          <h3>Confirma tu asistencia</h3>
+          <p>Queremos saber quién se atreverá a cruzar la puerta.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+    <section class="rsvp-section section-pad" id="confirmar">
+      <div class="rsvp-bg"></div>
+      <div class="rsvp-shade"></div>
+
+      <div class="rsvp-content reveal">
+        <div class="section-label">ÚLTIMA ADVERTENCIA</div>
+        <h2 class="section-title">¿Te atreves<br>a entrar?</h2>
+        <p>Confirma tu asistencia antes de que sea demasiado tarde.</p>
+
+        <a class="btn btn-red" id="whatsappButton"
+          href="https://wa.me/528443811681" target="_blank"
+          rel="noopener noreferrer">Confirmar por WhatsApp ☠</a>
+
+        <small>Si recibes esta invitación, ya formas parte de la historia.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="footer-skull">☠</span>
+    <p>FIESTA DE HALLOWEEN</p>
+    <small>ENTRA SI TE ATREVES · UNA NOCHE PARA RECORDAR</small>
+  </footer>
+
+  <button class="back-top" id="backToTop" type="button" aria-label="Volver arriba">↑</button>
+
+  <script src="./script.js"></script>
+</body>
+</html>
